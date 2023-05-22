@@ -1,0 +1,26 @@
+<p>pipe works!</p>
+
+<div>
+    data: {{employees | json}}
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Salary</th>
+            <th>DateOfJoining</th>                                    
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of employees">
+            <td>{{item.name | uppercase}}</td>
+            <td>{{item.city | lowercase | reverse}}</td>
+            <td>{{item.salary | currency }}</td>
+            <td>{{item.salary | currency: 'INR' }}</td>     
+            <td>{{item.dateOfJoining | date:'dd/MM/yyyy'}}</td>                                  
+        </tr>
+    </tbody>
+</table>

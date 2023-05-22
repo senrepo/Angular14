@@ -1,0 +1,27 @@
+<p>directive works!</p>
+
+<input type="number" [(ngModel)]="num"/>
+
+<h4 appHighlight>ngIf</h4>
+<div *ngIf="num!==undefined && num%2==0">Even Number</div>
+<div *ngIf="num!==undefined && num%2!==0">Odd Number</div>
+
+<h4 class="appHighlight">ngIf Else</h4>
+<div *ngIf="num!==undefined && num%2==0 then templateIf;else templateElse"></div>
+<ng-template #templateIf>Even Number </ng-template>
+<ng-template #templateElse>Odd Number</ng-template>
+
+<h4>ngFor</h4>
+<select [(ngModel)]="color">
+    <option [value]="''">Select a color</option>
+    <option *ngFor="let item of colors" [value]="item">{{item}}</option>
+</select>
+
+<h4>ngStyle</h4>
+<div [ngStyle]="{'color':color}"> selected color {{color}}</div>
+
+<h4>ngClass</h4>
+<div [ngClass]="{red:color=='red'}"> selected color {{color}}</div>
+<div [ngClass]="{green:color=='green'}"> selected color {{color}}</div>
+<div [ngClass]="{blue:color=='blue'}"> selected color {{color}}</div>
+

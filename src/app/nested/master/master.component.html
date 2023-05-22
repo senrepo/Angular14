@@ -1,0 +1,8 @@
+<p>master works!</p>
+
+master Company: {{company}} <br/>
+message from Detail component: {{msgFromDetailComponent}}
+<br/>
+<br/>
+
+<app-details [myCompany]="company" (msg)="GetData($event)"></app-details>

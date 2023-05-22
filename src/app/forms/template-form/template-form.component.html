@@ -1,0 +1,24 @@
+<p>template-form works!</p>
+
+<form #form="ngForm" (ngSubmit)="SaveData(form)">
+    <div>
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="name" #name="ngModel" [(ngModel)]="user.name" required=""/>
+        <div class="text-danger" *ngIf="name.hasError('required') && (form.submitted || name.touched)">
+            <span [hidden]="!name.hasError('required')" class="text-danger">Please enter name</span>
+        </div>
+    </div>
+    <div>
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" id="email" #email="ngModel" [(ngModel)]="user.email" required="" email=""/>
+        <div class="text-danger" *ngIf="(email.hasError('required') || email.hasError('email')) && (form.submitted || email.touched)">
+            <span [hidden]="!email.hasError('required')" class="text-danger">Please enter email</span>
+            <span [hidden]="!email.hasError('email')" class="text-danger">Please enter a valid email</span>            
+        </div>
+    </div>  
+               
+    <div>
+        <input class="btn btn-primary" type="submit" value="Register"/>
+    </div>
+</form>
+

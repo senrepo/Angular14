@@ -1,0 +1,15 @@
+<p>databinding works!</p>
+
+<p> Interpolation </p>
+Company: {{company}} <br/>
+Name: <input type="text" value="{{name}}" />
+
+<p> Property Biding</p>
+Name: <input type="text" [value]="name" /> <br/>
+<a [href]="site">site</a>
+
+<p> Event Binding</p>
+<button (click)="Greet()">Click me</button>
+
+<p>Two way DataBinding</p>
+<input type="text" [(ngModel)]="name">

@@ -1,0 +1,37 @@
+<p>reactive-form works!</p>
+
+<form [formGroup]="userForm" #form="ngForm" (ngSubmit)="SaveData()">
+    <div>
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" formControlName="name"/>
+        <div class="text-danger" *ngIf="userForm.controls['name'].errors && (form.submitted || userForm.controls['name'].touched)">
+            <span [hidden]="!userForm.controls['name'].errors['required']" class="text-danger">Please enter name</span>
+        </div>
+    </div>
+    <div>
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" formControlName="email"/>
+        <div class="text-danger" *ngIf="userForm.controls['email'].errors && (form.submitted || userForm.controls['email'].touched)">
+            <span [hidden]="!userForm.controls['email'].errors['required']" class="text-danger">Please enter email</span>
+            <span [hidden]="!userForm.controls['email'].errors['email']" class="text-danger">Please a valid email</span>
+        </div>
+    </div>    
+    <div>
+        <label for="password" class="form-label">Password</label>
+        <input type="text" class="form-control" name="password" formControlName="password"/>
+        <div class="text-danger" *ngIf="userForm.controls['password'].errors && (form.submitted || userForm.controls['password'].touched)">
+            <span [hidden]="!userForm.controls['password'].errors['required']" class="text-danger">Please enter password</span>
+        </div>
+    </div>  
+    <div>
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="text" class="form-control" name="confirmPassword" formControlName="confirmPassword"/>
+        <div class="text-danger" *ngIf="userForm.controls['confirmPassword'].errors && (form.submitted || userForm.controls['confirmPassword'].touched)">
+            <span [hidden]="!userForm.controls['confirmPassword'].errors['required']" class="text-danger">Please enter confirm password</span>
+            <span [hidden]="!userForm.controls['confirmPassword'].errors['matchValue']" class="text-danger">Please enter a matching password</span>
+        </div>
+    </div>          
+    <div>
+        <input class="btn btn-primary" type="submit" value="Register"/>
+    </div>    
+</form>
