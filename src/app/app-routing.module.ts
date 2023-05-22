@@ -10,7 +10,7 @@ import { ViewChildParentComponent } from './viewchild/view-child-parent/view-chi
 import { ParentHooksComponent } from './hooks/parent-hooks/parent-hooks.component';
 import { TemplateFormComponent } from './forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
-import { NotFoundComponent } from './notfound/not-found/not-found.component';
+import { NotFoundComponent } from './notfound/not-found.component';
 
 const routes: Routes = [
   {path: '', component: DatabindingComponent},

@@ -22,7 +22,7 @@ import { ChildHooksComponent } from './hooks/child-hooks/child-hooks.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { TemplateFormComponent } from './forms/template-form/template-form.component';
-import { NotFoundComponent } from './notfound/not-found/not-found.component';
+import { NotFoundComponent } from './notfound/not-found.component';
 
 @NgModule({
   declarations: [
